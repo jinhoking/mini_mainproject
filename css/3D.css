@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #e9ebee; /* 배경색을 연한 회색으로 */
+    color: #333;
+    line-height: 1.6;
+}
+
+.main_header{
+    display: flex;
+    align-items: center; 
+    gap: 30px; 
+    padding: 40px; /* 섹션의 내부 여백 (원하는 만큼 조절) */
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+.logo img{
+    flex-shrink: 0; /* 이미지가 줄어들지 않도록 설정 */
+    width: 280px;
+    height: 250px; /* 이미지 너비 (조절 가능) */
+    max-width: 500px; 
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 그림자 효과 (선택 사항) */
+}
+.main_header h1{
+    font-size: 2.2em;
+    color: #0696d7; 
+    margin-bottom: 10px;
+}
+.main-nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixes the bar to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+} 
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-logo img {
+    height: 40px; /* Adjust logo height */
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+    
+    
+}
+
+.nav-links a {
+    color: #555;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #0696d7;
+    text-decoration: none;
+}
+
+.main_header intro{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-basis: calc(50% - 10px); /* 기본 너비를 50%에서 간격의 절반만큼 뺌 */
+    border: 2px solid transparent;
+}
+
+#wrapper2 {
+    width: 1100px;
+    margin: 40px auto; /* 페이지 중앙 정렬 및 상하 여백 */
+}
+.dec3d {
+    display: flex; 
+    flex-wrap: wrap; /* 요소들이 넘치면 줄바꿈 */
+    gap: 20px; /* 박스 사이의 간격 */
+    margin-bottom: 30px;
+}
+.desc3d_box{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-basis: calc(50% - 10px); /* 기본 너비를 50%에서 간격의 절반만큼 뺌 */
+}
+.desc3d_box h2{
+    font-size: 1.5em;
+    color: #0696d7;
+    margin-bottom: 15px;
+    border-left: 4px solid #0696d7;
+    padding-left: 10px;
+}

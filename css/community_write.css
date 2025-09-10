@@ -1,0 +1,109 @@
+/* 전체 컨테이너 */
+.write-form-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* 폼 헤더 (제목) */
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-header h2 {
+    color: #888;
+    font-size: 16px;
+    margin: 0;
+}
+.form-header h1 {
+    color: #333;
+    font-size: 28px;
+    margin: 5px 0 0 0;
+}
+
+/* 폼 그룹 (라벨 + 입력필드) */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+textarea {
+    resize: vertical; /* 세로 크기만 조절 가능하도록 */
+}
+
+/* 파일 첨부 스타일 */
+.file-upload {
+    display: flex;
+    align-items: center;
+}
+.file-name {
+    flex-grow: 1;
+    margin-right: 10px;
+    background-color: #f8f9fa;
+    color: #888;
+}
+.file-select-btn {
+    background-color: whitesmoke;
+    width: 10%;
+    height: 45px;
+    border:none;
+    border-radius: 8px;
+    padding: 1px;
+}
+.file-select-btn :hover{
+    background-color: #0056b3;
+}
+
+/* 버튼 스타일 */
+.form-actions {
+    text-align: right;
+    margin-top: 30px;
+}
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.btn-secondary {
+    background-color: #e9ecef;
+    color: #333;
+    margin-right: 10px;
+    width: 100px;
+}
+.btn-secondary:hover {
+    background-color: #ced4da;
+}

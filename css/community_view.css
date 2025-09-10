@@ -1,0 +1,165 @@
+/* --- 전체를 감싸는 박스 --- */
+.main-view {
+    width: 1100px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 40px; /* 내부 여백을 넉넉하게 */
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* 그림자 효과 */
+}
+.main-header h1 {
+    font-size: 2.2em;
+    color: #0696d7; /* AutoCAD 메인 색상 */
+    margin-bottom: 10px;
+}
+.main-nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixes the bar to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+} 
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-logo img {
+    height: 40px; /* Adjust logo height */
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+    
+    
+}
+
+.nav-links a {
+    color: #555;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #0696d7;
+    text-decoration: none;
+}
+/* --- 게시판 제목 --- */
+.main-view h2#board_title {
+    font-size: 2.2em; /* 제목 크기 키우기 */
+    padding-bottom: 20px;
+    border-bottom: 3px solid #333; /* 구분선 굵게 */
+    margin-bottom: 25px;
+}
+
+/* --- 글 제목 영역 --- */
+#view_title_box {
+    padding: 20px;
+    background-color: #f8f9fa; /* 배경색으로 구분 */
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 30px;
+    display: flex; /* Flexbox로 정렬 */
+    justify-content: space-between; /* 양 끝 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+#view_title_box span:first-child { /* 게시글 제목 */
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#view_title_box #info {
+    /* float는 더 이상 필요 없음 */
+    font-size: 0.9em;
+    color: #666;
+    font-weight: normal;
+}
+
+/* --- 글 내용 --- */
+#view_content {
+    padding: 10px;
+    line-height: 1.8;
+    min-height: 250px; /* 최소 높이 확보 */
+    font-size: 1.1em;
+    color: #343a40; 
+}
+
+/* --- 댓글 상자 --- */
+#comment_box {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #e9ecef; /* 구분선 색상 통일 */
+}
+
+#comment_box #title_comment {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    color: #333;
+}
+
+#comment_box textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* --- 하단 버튼 --- */
+#buttons {
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 10px; /* 버튼 사이 간격 */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef; /* 구분선 색상 통일 */
+}
+
+#buttons a {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s;
+    
+}
+
+/* 각 버튼에 다른 배경색 적용 */
+#buttons a[href*="delete"] { background-color: #dc3545; }
+#buttons a[href*="list"] { background-color: #6c757d; }
+#buttons a[href*="write"] { background-color: #0696d7; }
+
+/* 버튼 호버 효과 */
+#buttons a:hover {
+    opacity: 0.85; /* 마우스를 올렸을 때 살짝 투명하게 */
+}

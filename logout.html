@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCAD - 로그인</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <nav class="main-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="img/klogo.png" alt="KCAD 로고">
+                <span>Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="2D.html">2D</a></li>
+                <li><a href="3D.html">3D</a></li>
+                <li><a href="Collaboration.html">협업</a></li>
+                <li><a href="coummunity_list.html">커뮤니티</a></li>
+                <li><a href="#">고객 지원</a></li>
+            </ul>
+           
+    </nav>
+    
+    <div class="login-container">
+        <div class="login-header">
+            <img src="img/klogo.png" alt="KCAD 로고" class="login-logo">
+            <h2>KCAD 로그인</h2>
+        </div>
+        <form class="login-form">
+            <div class="input-group">
+                <label for="username">사용자 이름 또는 이메일</label>
+                <input type="text" id="username" name="username" placeholder="사용자 이름 또는 이메일 입력(admin)" required>
+            </div>
+            <div class="input-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호 입력(1234)" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">로그인 정보 기억하기</label>
+            </div>
+            <button type="submit" class="login-button">로그인</button>
+            <div class="login-links">
+                <a href="#" class="forgot-password">비밀번호를 잊으셨나요?</a>
+                <a href="register-link.html" class="register-link">계정 생성하기</a>
+            </div>
+            
+        </form>
+    </div>
+    <script>
+       const loginForm = document.querySelector(".login-form");
+       loginForm.addEventListener('submit',function(event){
+        event.preventDefault();
+
+        const correctUsername = 'admin';
+        const correctPassword = '1234';
+
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+
+        if(enteredUsername === correctUsername && enteredPassword === correctPassword){
+            alert('로그인 성공! 환영합니다.');
+            window.location.href ="login_sucess_index.html";
+        }else{
+            alert('아이디 또는 비밀번호가 올바르지 않습니다.');
+        }
+       });
+
+        
+    </script>
+</body>
+</html>

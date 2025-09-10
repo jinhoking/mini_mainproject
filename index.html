@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCAD - 정밀 설계의 표준</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/swipper.css">
+    
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="main-nav">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <img src="img/klogo.png" alt="KCAD Nav로고">
+                    <span>Home</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="coummunity_list.html">커뮤니티</a></li>
+                    <li><a href="#">고객지원</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header class="main-header">
+            <div class="logo">
+                <img src="img/klogo.png" alt="K캐드 로고">
+            </div>
+            <h1>상상을 현실로 만드는 정밀 설계의 표준</h1>
+            <p>2D 및 3D 설계를 위한 최고의 솔루션, KCAD를 만나보세요.</p>
+        </header>
+
+        <section class="features-section">
+            <div class="feature-box">
+                <a href="2D.html" class="feature-link-box">
+                    <h2>2D 도면화 및 주석</h2>
+                    <p>정확한 2D 도면과 문서를 작성하세요. 텍스트, 치수, 테이블 등 다양한 주석 도구를 제공하여 협업을 용이하게 합니다.</p>
+                </a>    
+            </div>
+            <div class="feature-box">
+                <a href="3D.html" class="feature-link-box">
+                    <h2>3D 모델링 및 시각화</h2>
+                    <p>솔리드, 서페이스, 메쉬 모델링 도구로 아이디어를 3D로 구현하세요. 사실적인 렌더링으로 디자인을 생생하게 표현할 수 있습니다.</p>
+                </a>
+            </div>
+            <div class="feature-box wide-box">
+                <a href="Collaboration.html" class="feature-link-box">
+                    <h2>협업 및 사용자화</h2>
+                    <p>PDF 및 DGN 파일 공유, KCAD 웹 및 모바일 앱을 통해 언제 어디서든 작업하세요. KLISP, API를 활용해 워크플로우를 자동화할 수 있습니다.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="why-kcad-section">
+            <div class="text-content">
+                <h2>Why KCAD?</h2>
+                <p>30년 이상 전 세계 전문가들의 신뢰를 받아온 KCAD는 업계 최고의 정밀도와 안정성을 자랑합니다. 건축, 엔지니어링, 건설(AEC) 분야의 전문가들은 KCAD를 통해 복잡한 프로젝트를 성공적으로 완수하고 있습니다. 지금 바로 KCAD의 강력한 기능을 경험해보세요.</p>
+                <a href="#" class="cta-button">무료 체험판 시작하기</a>
+            </div>
+            <div class="image-content">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2940" alt="엔지니어가 AutoCAD를 사용하는 모습">
+            </div>
+        </section>
+
+        <section class="partner-banner">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/autocad_logo.PNG" alt="Partner 1"></div>
+                    <div class="swiper-slide"><img src="img/solidworks.png" alt="Partner 2"></div>
+                    <div class="swiper-slide"><img src="img/Dassault_systemes_logo.png" alt="Partner 3"></div>
+                    <div class="swiper-slide"><img src="img/sketchup.PNG" alt="Partner 4"></div>
+                    <div class="swiper-slide"><img src="img/adobe.PNG" alt="Partner 5"></div>
+                    <div class="swiper-slide"><img src="img/peskill.png"  alt="Partner 6"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Kdesk, Inc. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+
+        window.onload = function() {
+            window.open(
+                "popup.html", 
+                "noticePopup", 
+                "width=550, height=600, top=100, left=100, scrollbars=no, toolbars=no, location=no"
+            );
+        };
+        
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 5, 
+            spaceBetween: 40, 
+            autoplay: {
+            delay: 2500, 
+            disableOnInteraction: false, 
+            },
+        });
+    </script>
+</body>
+</html>

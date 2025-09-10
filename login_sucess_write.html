@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCAD - 정밀 설계의 표준</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/community_write.css">
+    
+    
+</head>
+<body>
+<div id="wrapper">
+    <nav class="main-nav">
+    <div class="nav-content">
+        <a href="login_sucess_index.html" class="nav-logo">
+            <img src="img/klogo.png" alt="KCAD Nav로고">
+            <span>Home</span>
+        </a>
+        
+        <ul class="nav-links">
+            
+            <li><a href="login_sucess_2D.html">2D</a></li>
+                <li><a href="login_sucess_3D.html">3D</a></li>
+                <li><a href="login_sucess_Colab.html">협업</a></li>
+                <li><a href="login_sucess_list.html">커뮤니티</a></li>
+                <li><a href="login_sucess_support.html">고객 지원</a></li>
+                <li><a href="#">admin</a></li>
+                <li><a href="logout.html">logout</a></li>    
+        </ul>
+    </div>
+    </nav> 
+    <div class="write-form-container">
+    <div class="form-header">
+        <h2>자유 게시판</h2>
+        <h1>글쓰기</h1>
+    </div>
+
+    <form class="write-form">
+        <div class="form-group">
+            <label for="post-author">이름</label>
+            <input type="text" id="post-author" placeholder="이름을 입력하세요">
+        </div>
+
+        <div class="form-group">
+            <label for="post-title">제목</label>
+            <input type="text" id="post-title" placeholder="제목을 입력하세요">
+        </div>
+
+        <div class="form-group">
+            <label for="post-content">내용</label>
+            <textarea id="post-content" rows="10" placeholder="내용을 입력하세요"></textarea>
+        </div>
+
+        <div class="form-group file-upload">
+            <label for="post-file">첨부파일</label>
+            <input type="text" class="file-name" value="선택된 파일 없음" readonly>
+            <button type="button" class="file-select-btn">파일 선택</button>
+            <input type="file" id="post-file" style="display: none;">
+        </div>
+
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary">취소</button>
+            <button type="submit" class="btn btn-primary">등록하기</button>
+        </div>
+    </form>
+</div>
+
+  </body>
+  </html>

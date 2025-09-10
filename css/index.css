@@ -1,0 +1,208 @@
+/* 기본 스타일 초기화 및 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color:#e9ebee; /* 배경색을 연한 회색으로 */
+; /* 전체 페이지 배경색 */
+    color: #333;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: #0696d7; /* KCAD 메인 색상 */
+}
+
+/* 전체 레이아웃을 감싸는 wrapper */
+#wrapper {
+    width: 1100px;
+    margin: 40px auto; /* 페이지 중앙 정렬 및 상하 여백 */
+}
+
+/* 헤더 스타일 */
+.main-header {
+    background:#fff;
+    border-radius: 8px;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.main-header .logo img {
+    width: 450px; /* 로고 크기 */
+}
+
+.main-header h1 {
+    font-size: 2.2em;
+    color: #0696d7; /* AutoCAD 메인 색상 */
+    margin-bottom: 10px;
+}
+.main-nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixes the bar to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+} 
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-logo img {
+    height: 40px; /* Adjust logo height */
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+    
+    
+}
+
+.nav-links a {
+    color: #555;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #0696d7;
+    text-decoration: none;
+}
+
+
+/* 핵심 기능 섹션 (Flexbox 사용) */
+.features-section {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; /* 박스 사이의 간격 */
+    margin-bottom: 30px;
+}
+
+.feature-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-basis: calc(50% - 10px); 
+    border: 2px solid transparent; 
+    transition: border-color 0.2s ease, transform 0.2s ease; /* 부드러운 전환 효과 */
+    cursor: grab;
+    
+   
+}
+.feature-link-box{
+    display: block;
+    text-decoration: none; 
+    color: inherit; 
+    
+}
+
+.feature-box:hover {
+    transform: translateY(-5px); 
+    border : 3px solid blueviolet;
+}
+
+/* 드래그해서 선택되었을 때의 스타일 */
+.feature-box.is-selected {
+    border-color: #0696d7; /* 파란색 테두리 표시 */
+       
+}
+.feature-box.wide-box {
+    flex-basis: 100%; 
+}
+
+.feature-box h2 {
+    font-size: 1.5em;
+    color: #0696d7;
+    margin-bottom: 15px;
+    border-left: 4px solid #0696d7;
+    padding-left: 10px;
+}
+
+/* "Why AutoCAD?" 섹션 */
+.why-kcad-section {
+    display: flex;
+    gap: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* 이미지의 둥근 모서리 처리를 위해 */
+}
+
+.why-kcad-section .text-content {
+    flex: 1; /* 남은 공간을 모두 차지 */
+    padding: 40px;
+}
+
+.why-kcad-section .image-content {
+    flex: 1; /* 남은 공간을 모두 차지 */
+}
+
+.why-kcad-section .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 설정 */
+}
+
+.why-kcad-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* CTA (Call-to-Action) 버튼 스타일 */
+.cta-button {
+    display: inline-block;
+    background-color: #0696d7;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0477ab;
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+}

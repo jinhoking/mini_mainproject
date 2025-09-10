@@ -1,0 +1,49 @@
+/* --- 이미지 설명 슬라이더 --- */
+.feature-slider {
+    max-width: 1200px;
+    margin: 40px auto; /* 위아래 여백을 주어 다른 섹션과 분리 */
+    padding: 20px;
+    text-align: center;
+
+}
+
+.feature-slider h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.feature-slider .swiper {
+    width: 100%;
+    padding: 20px 50px; /* 좌우 버튼을 위한 여백 */
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.feature-slider .swiper-slide {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.feature-slider .swiper-slide img {
+    width: 50%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.feature-slider .swiper-slide .text-content {
+    width: 50%;
+    text-align: left;
+    gap: 40px;
+}
+/* ... 나머지 슬라이더 텍스트 스타일은 이전 답변과 동일 ... */
+
+/* --- 이전/다음 버튼 스타일 --- */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #007bff; /* 버튼 색상 */
+}

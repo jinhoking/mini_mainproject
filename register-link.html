@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCAD - 로그인</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+  <nav class="main-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="img/klogo.png" alt="KCAD 로고">
+                <span>Home</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="2D.html">2D</a></li>
+                <li><a href="3D.html">3D</a></li>
+                <li><a href="Collaboration.html">협업</a></li>
+                <li><a href="coummunity_list.html">커뮤니티</a></li>
+                <li><a href="#">고객 지원</a></li>
+            </ul>           
+    </nav>
+
+    <div class="signup-container">
+        <h2>계정 생성하기</h2>
+        <form id="signup-form">
+            <div class="input-group">
+                <label for="username">사용자 이름</label>
+                <input type="text" id="username" name="username" required>
+                <div class="message" id="username-message"></div>
+            </div>
+            <div class="input-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required>
+                <div class="message" id="email-message"></div>
+            </div>
+            <div class="input-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required>
+                <div class="message" id="password-message"></div>
+            </div>
+            <div class="input-group">
+                <label for="password-confirm">비밀번호 확인</label>
+                <input type="password" id="password-confirm" name="password-confirm" required>
+                <div class="message" id="password-confirm-message"></div>
+            </div>
+            <button type="submit" class="signup-button" id="submit-btn" disabled>생성하기</button>
+        </form>
+    </div>
+    <script>
+    const form = document.getElementById('signup-form');
+    const usernameInput = document.getElementById('username');
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const passwordConfirmInput = document.getElementById("password-confirm");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const usernameMessage = document.getElementById("username-message");
+    const emailMessage = document.getElementById("email-message");
+    const passwordMessage = document.getElementById("password-message");
+    const passwordConfirmMessage = document.getElementById("password-confirm-message");
+
+    let isUsernameValid = false;
+    let isEmailValid = false;
+    let isPasswordValid = false;
+    let isPasswordConfirmValid = false;
+    
+    function showMessage(element, message, isSuccess) {
+        element.style.display = "block";
+        element.textContent = message; 
+        element.className = isSuccess ? 'message success' : 'message error'; 
+    }
+
+    function checkFormValidity() {
+        if (isUsernameValid && isEmailValid && isPasswordValid && isPasswordConfirmValid) {
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.disabled = true;
+        }
+    }
+    
+    usernameInput.addEventListener('input', () => {
+        const username = usernameInput.value;
+        if (username.length >= 3) {
+            showMessage(usernameMessage, "사용 가능한 이름입니다.", true);
+            isUsernameValid = true; 
+        } else {
+            showMessage(usernameMessage, "이름은 3자 이상이어야 합니다.", false);
+            isUsernameValid = false;
+        }
+        checkFormValidity();
+    });
+
+    emailInput.addEventListener('input', () => {
+        const email = emailInput.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailRegex.test(email)) {
+            showMessage(emailMessage, "유효한 이메일 형식입니다.", true);
+            isEmailValid = true; 
+        } else {
+            showMessage(emailMessage, "유효한 이메일 주소를 입력해주세요.", false);
+            isEmailValid = false;
+        }
+        checkFormValidity();
+    });
+    
+    passwordInput.addEventListener('input', () => {
+        const password = passwordInput.value;
+        const specialCharRegex = /[^a-zA-Z0-9]/;
+        
+        if (password.length < 8) {
+            showMessage(passwordMessage, '비밀번호는 8자 이상이어야 합니다.', false);
+            isPasswordValid = false;
+        } else if (!specialCharRegex.test(password)) {
+            showMessage(passwordMessage, '특수문자를 1개 이상 포함해야 합니다.', false);
+            isPasswordValid = false;
+        } else {
+            showMessage(passwordMessage, '안전한 비밀번호입니다.', true);
+            isPasswordValid = true; 
+        }
+        if (passwordConfirmInput.value) {
+            validatePasswordConfirm(); 
+        }
+        checkFormValidity();
+    });
+
+    function validatePasswordConfirm() { 
+        const password = passwordInput.value;
+        const passwordConfirm = passwordConfirmInput.value;
+        if (passwordConfirm === password && passwordConfirm.length > 0) {
+            showMessage(passwordConfirmMessage, "비밀번호가 일치합니다.", true);
+            isPasswordConfirmValid = true; 
+        } else {
+            showMessage(passwordConfirmMessage, "비밀번호가 일치하지 않습니다.", false);
+            isPasswordConfirmValid = false; 
+        }
+        checkFormValidity();
+    }
+    
+    passwordConfirmInput.addEventListener('input', validatePasswordConfirm);
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (isUsernameValid && isEmailValid && isPasswordValid && isPasswordConfirmValid) {
+            alert("계정이 생성되었습니다!");
+            const formData = {
+                username: usernameInput.value,
+                email: emailInput.value,
+                password: passwordInput.value,
+            };
+            console.log('form data submitted:', formData);
+            form.reset();
+            
+            usernameMessage.style.display = 'none';
+            emailMessage.style.display = 'none';
+            passwordMessage.style.display = 'none';
+            passwordConfirmMessage.style.display = 'none';
+            isUsernameValid = false;
+            isEmailValid = false;
+            isPasswordValid = false;
+            isPasswordConfirmValid = false;
+            checkFormValidity();
+        } else {
+            alert('입력 정보를 다시 확인해주세요.');
+        }
+    });
+</script>
+    
+        
+</body>
+</html>
